@@ -4,7 +4,7 @@ title:  "Project Introduction"
 date:   2023-01-02 17:08:38 +0200
 categories: info
 ---
-![](/assets/images/slaves.jpg)
+![slaves]({{ site.baseurl }}/images/slaves.jpg)
 
 VPP-EM-FOTONIKA-2022/1-0001 Smart Materials, Photonics, Technologies and Engineering Ecosystem [MOTE]
 
@@ -16,3 +16,14 @@ WP4 “ROBOTICS/IoT” is dedicated to three groups of technologies have been id
 
 [jupyter notebook server](http://194.8.1.230:7788/)
 
+[PyScript example](https://guntisx.github.io/pythonindex.html)
+
+[WASM SAT solver](http://194.8.1.232:7777/uploads/cryptominisat_web-master/)
+
+[WASM Whisper](https://whisper.ggerganov.com/)
+
+[Mongo Whisper](http://194.8.1.230:5002/results)
+
+[SELMA DockerSpaces Whisper](http://87.110.211.231:10100/x:selmaproject:whisper_api:large-cpu-0.0.1:8000/docs)
+
+[HuggingFace DockerSpaces](https://huggingface.co/docs/hub/spaces-sdks-docker)
