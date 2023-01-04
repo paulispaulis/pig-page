@@ -1,0 +1,32 @@
+---
+layout: post
+title:  "Kickoff atziņas"
+date:   2023-01-04 14:20:00 +0200
+categories: notes
+---
+
+Vēlamies divu gadu laikā izveidot ko tautsaimniecībai noderīgu; pārliecināt finanšu ministriju, ka ir jēga datoriķiem dot naudu.
+
+[kickoff meeting pieraksti]({{ site.baseurl }}/files/kickoff.pdf)
+
+### **Pieejas filozofija**
+
+Ko nevajag darīt: kaut ko kas izliekas par lielu un pilnīgu darbu, bet dienas beigās nevienam nav vajadzīgs.
+
+Ko vajag darīt: jebkādu skaitu ar soļiem virzienā, kas pēcāk noderēs.
+
+### **Iekritiena riski**
+
+Lai šim plānam sekotu ir jāapzinās pāris klupšanas punkti. Projekts nav milzīgs, tātad nevajag tēmēt par ambiciozu. Bet apzinoties, ka izveidosim vien daļas, tām daļām jābūt pēc iespējas izmantojamām! Kā piemērs – mums ir daži roboti, uz kuriem varam taisīt demo. Bet nav jēga visu laiku tērēt tikai priekš demo, kas ir super specifisks šiem robotiem, jo šos robotus tautsaimniecība neizmantos.
+
+### **Idejas**
+
+#### **Iznest iz iekavām**
+
+Viena ideja: visiem robotiem kas ir vidē ir vajadzīgs vidi redzēt un saprast; šo funkciju var iznest iz konkrētā robota. Tad mūsu roboti tik atrāda mūsu semantiskās percepcijas pielietojamību! Kā arī, visiem robotiem vajadzēs nodot plānu, ko šajā vidē izpildīt. Plānošanu arī var abstrahēt ārpus robota, ja plānotājs spēj izmantot jebkādu kopu ar konkrētam robotam pieejamiem *motion primitives*.
+
+#### **NeRF + WHISPR ( + NN? ) + SAT**
+
+Uztverto vidi veidojam par semantisku NeRF, kurš veido telpas karti pa kuru vēlamies pildīt savus uzdevumus. Šai kartē būtu zināms kur var iet, kur nevar, objektu atpazīšana, ... Uzdevumu robots saņem caur balss komandu, kuru ar kādu gatavu WHISPR modeli pārveidojam par tekstu. Tagad mums ir teksta komanda un semantisks vides attainojums – jāiegūst plāns, kurš sastāv no *motion primitives*, kas šajā vidē vēlamo komandu izpilda. Šeit radās ideja izmantot jaudīgos SAT solverus (atšķirībā no parasti populārā Reinforcement Learning, kurš diemžēl pagaidām gana labi nestrādā, vismaz ne bez bezgalīgiem treniņ datiem). Bet lai neiekristu trakā SAT grāvī, kur cenšamies iekš SAT formulas iespiest kaut ko neatbilstošu un milzīgu ir ideja – apvienot Neural Networks un SAT; izveidot NN kas no teksta komandas saveido secību ar SAT formulu izsaukšanām, kas rezultātā atdot ķēdi ar robotam pieejamiem *motion primitives*.
+
+Kā precīzi izskatīsies risinājums? Vēl nezinam, daudz kur (it īpaši SAT + NN daļā) vēl daudz uzzināsim mēģinot; bet ja aprakstīto sanāktu izveidot, tas būtu noderīgs ārpus konkrēta robota! Tad mūsu risinājums atjaunojas un uzlabojas līdzi katram nākamajam spējīgākam robotam! Un, cerams, uzliekams uz plašu skaitu ar specializētiem robotiem.
