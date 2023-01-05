@@ -19,6 +19,10 @@ Ko vajag darīt: jebkādu skaitu ar soļiem virzienā, kas pēcāk noderēs.
 
 Lai šim plānam sekotu ir jāapzinās pāris klupšanas punkti. Projekts nav milzīgs, tātad nevajag tēmēt par ambiciozu. Bet apzinoties, ka izveidosim vien daļas, tām daļām jābūt pēc iespējas izmantojamām! Kā piemērs – mums ir daži roboti, uz kuriem varam taisīt demo. Bet nav jēga visu laiku tērēt tikai priekš demo, kas ir super specifisks šiem robotiem, jo šos robotus tautsaimniecība neizmantos.
 
+Roboti arī ir dažādi. Piedāvājam sekojošo 2x2 klasifikāciju, kurā ir svarīgi saprast uz ko tēmējām, lai zinātu kādi risinājumi vajadzīgi un derīgi.
+
+![2x2]({{ site.baseurl }}/images/2x2.jpeg)
+
 ### **Idejas**
 
 #### **Iznest iz iekavām**
