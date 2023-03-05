@@ -4,6 +4,11 @@ title:  "Kickoff atziņas"
 date:   2023-01-04 14:20:00 +0200
 categories: notes
 ---
+<style>
+p {
+	text-align: justify
+}
+</style>
 
 Vēlamies divu gadu laikā izveidot ko tautsaimniecībai noderīgu; pārliecināt finanšu ministriju, ka ir jēga datoriķiem dot naudu.
 

@@ -4,6 +4,12 @@ title:  "Project Introduction"
 date:   2023-01-02 17:08:38 +0200
 categories: info
 ---
+<style>
+p {
+	text-align: justify
+}
+</style>
+
 ![slaves]({{ site.baseurl }}/images/slaves.jpg)
 
 VPP-EM-FOTONIKA-2022/1-0001 Smart Materials, Photonics, Technologies and Engineering Ecosystem [MOTE]
