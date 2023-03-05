@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Our Perception System: Survey and Pitch"
-date:   2023-02-08 04:20:00 +0200
+date:   2023-03-05 04:20:00 +0200
 categories: notes
 ---
 <style>
