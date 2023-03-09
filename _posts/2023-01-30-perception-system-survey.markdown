@@ -29,7 +29,7 @@ Contents:
 
 ## [Survey](#survey)
 
-This post contains our survey of the current scene in robotics, focused on unstructured (messy) real-world environments, particularly robot vision within those environments.
+This post contains our survey of the current scene in robotics, focused on unstructured (messy, wild) real-world environments, particularly robot vision within those environments.
 
 ### Robotics and project pitfalls
 
@@ -45,7 +45,7 @@ Similarly, path planning is highly dependent on the motion primitives of the spe
 
 For localization, we don't have a concrete client use-case, so doing localization of the robot is premature. But, we will undoubtedly want to localize something in our perceived vision field. So localization of objects sticks around.
 
-Perception is the first step, and the one that most describes what we will do in our subtask of the project. We will work on on the robot perception, mapping the environment, and will try out methods of adding semantics to that mapping. Thus we'd be moving towards a hopefully generalisable vision system that maps the environment and recognizes relevant objects within it; this all can then be passed as knowledge to the task planner and later the robot for execution.
+Perception is the first step, and the one that most describes what we will do in our subtask of the project. We will work on the robot perception, mapping the environment, and will try out methods of adding semantics to that mapping. Thus we'd be moving towards a hopefully generalisable vision system that maps the environment and recognizes relevant objects within it; this all can then be passed as knowledge to the task planner and later the robot for execution.
 
 For this reason our subtask of the project has gained the name "Perception Systems", with the ambition of moving towards useful and generalisable semantic perception, something that vision based robots need.
     
@@ -89,6 +89,7 @@ The input received plays a significant role in the results the algorithm can ach
 - RGB-D cameras (regular cameras with an additional depth sensor; the depth data is fused to each pixel within the camera)
 - LIDAR (sensor with no colour information, purely for depth; has to be fused with camera data)
 - event cameras (measure change in pixel values not absolute; has potential to help motion blur and dark environments)
+- camera ring
 
 ### NeRFs
 
@@ -149,7 +150,7 @@ This [Feb 2023 paper titled E-NeRF: Neural Radiance Fields From a Moving Event C
 
 ![enerf motion blur]({{ site.baseurl }}/images/survey/enerf.png)
 
-E-NeRF proposes to use an event camera to estimate NeRFs in challenging conditions. It is a wholly different type of camera so it can perform better where regular RGB would fail. If within the project we plan to place actual sensors on robots an event camera might be worth considering. Though the integration of it to a NeRF is a novel research area; while E-NeRF has made their code available, integration would likely still take work. But this is still worthy to note, as the fact that this has been done and researchers are working on it means that motion blur and darker environments will have a sensor solution! So our work can assume it.
+E-NeRF proposes to use an event camera to estimate NeRFs in challenging conditions. It is a wholly different type of camera so it can perform better where regular RGB would fail. If within the project we plan to place actual sensors on robots an event camera might be worth considering. Though the integration of it to a NeRF is a novel research area; while E-NeRF has made their code available, integration would likely still take work. Nevertheless this is  worthy to note, as the fact that this has been done and researchers are working on it means that motion blur and darker environments will have a sensor solution! So our work can assume it.
 
 ### Decomposing NeRF
 
@@ -167,7 +168,7 @@ What they did differently is to first run an object segmenter, which found the t
 
 Some drawbacks that they mention is that there are millions of 3D points over an apartment-scale scene, each augmented with high-dimensionality embeddings, requiring large amounts of memory and inducing latency; so there is work to do to make this practical for mobile robotics, but the approach is elegant and transfers some of the LLM real-world reasoning magic to the 3D space.
 
-They also mentioned concurrent work that are doing robot navigation based on language commands, might need to check out (VLMaps [44], LM-Nav [45], CoWs [46], and NLMap-Saycan [47]; numbers are the references within the ConceptFusion paper).
+They also mentioned concurrent work that they are doing in robot navigation based on language commands, might need to check out (VLMaps [44], LM-Nav [45], CoWs [46], and NLMap-Saycan [47]; numbers are the references within the ConceptFusion paper).
 
 ![concept fusion]({{ site.baseurl }}/images/survey/conceptfusion.png)
 
@@ -185,7 +186,7 @@ Sensor input, semantic segmentation on the input, then 3D mapping of the semanti
 
 #### Sensor input
 
-Sensors would likely be RGB-D, as they are popular in robotics and the depth knowledge allows not to use computer calculations for distance data. Though we may find out that their precision is not satisfactory. LIDAR is a depth data improvement option, but takes work to fuse the input. Computational methods (COLMAP and NeRF) are another option on improvement on the data processing side.
+Sensors would likely be RGB-D, as they are popular in robotics and the depth knowledge allows not to use computer calculations for distance data estimates. Though we may find out that their precision is not satisfactory. LIDAR is a depth data improvement option, but takes work to fuse the input. Computational methods (COLMAP and NeRF) are another option on improvement on the data processing side.
 
 There is the aspect of motion blur and bad lighting on robots, which event cameras seem to be able to help. For the scope of this project we likely won't have event cameras ourselves, but will keep up with research so that we can point to where the solution for motion blur is, and at what stage of development.
 
