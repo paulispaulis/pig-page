@@ -11,12 +11,9 @@ p {
 </style>
 
 
-### TODO
-- type up pitch
-
 ---
 
-Contents:
+### Contents:
 
 - <A href="#survey">Survey</A>
     - <A href="#survey">Introduction</A>
@@ -75,9 +72,9 @@ The same authors had the next version of the [robot with LIDAR in 2022 (Accurate
 
 The same is said in this [2022 review on fruit harvesting robots (Intelligent robots for fruit harvesting: recent developments and future challenges)](https://link.springer.com/article/10.1007/s11119-022-09913-3) "widespread use of harvesting robots in orchards is yet to be seen". Another point to take note of, all of these occasionally impressive results in computer vision are for **predefined classes**. Depending on the use-case the quality of these results can be completely irrelevant for what to expect from results in other tasks (where more general computer vision might be needed).
 
----
+[](#tech)
 
-## [Technologies](#tech)
+## Technologies
 
 Before moving on to some cutting edge research, I'll introduce some of the relevant components for this task we are approaching.
 
@@ -196,7 +193,7 @@ Semantic segmentation looks to be ConceptFusion inspired, as the elegancy of fin
 
 Potential avenues for improvement – personally had the idea to play with granularities, as the robot, while in the move to target phase, wouldn't mind larger granularities of points (definitely for semantic data; for movement it needs enough for navigation without crashes). And you could then define focus areas, likely when the robot has arrived at the location and is ready for the manipulation phase, where the granularity increases. This should reduce computational costs making the technology more appropriate for robotics applications.
 
-Any other improvement ideas? (gunti? ingu?)
+The application of the method on data relevant to our potential clients is another avenue of improvement; making the technology work on images of forestry or agriculture (the ConceptFusion paper only shows apartments and streets – man made environments).
 
 #### 3D mapping
 
@@ -204,13 +201,9 @@ Our team has most explored NeRFs, as that was our entry point to this type of ta
 
 Default might be a point cloud. An interesting one might be some version of NeRFs which we use in their pre-rendered state.
 
-**gunti? ingu?**
+This final part is still open for discussion.
 
-### For the next call w Anspoks
 
-- run mask2former (for object detection)
-- run CLIP on the crops
-- for presentation demo show how queries light up in different crops
 
 
 
